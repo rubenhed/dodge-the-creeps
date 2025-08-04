@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cxateg5anyc8v"]
+[gd_scene load_steps=10 format=3 uid="uid://cxateg5anyc8v"]
 
 [ext_resource type="Script" uid="uid://v0pbm3svqnr" path="res://mob.gd" id="1_1qmh0"]
 [ext_resource type="Texture2D" uid="uid://yqp3ecjeevbo" path="res://art/enemyFlyingAlt_1.png" id="1_b3mxk"]
@@ -44,7 +44,11 @@ animations = [{
 "speed": 3.0
 }]
 
-[node name="Mob" type="RigidBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_1qmh0"]
+radius = 27.0
+
+[node name="Mob" type="RigidBody2D" groups=["mobs"]]
+position = Vector2(15, -9)
 collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource("1_1qmh0")
@@ -57,6 +61,8 @@ sprite_frames = SubResource("SpriteFrames_pcqmr")
 animation = &"fly"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 14)
+shape = SubResource("CircleShape2D_1qmh0")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
