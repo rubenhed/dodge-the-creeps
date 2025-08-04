@@ -6,12 +6,11 @@ var score
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
-
+	#$Player.hit.connect(game_over)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
 
 func game_over() -> void:
 	$ScoreTimer.stop()
@@ -28,7 +27,6 @@ func new_game() -> void:
 	$HUD.show_message("Get Ready")
 	get_tree().call_group("mobs", "queue_free")
 	$Music.play()
-
 
 func _on_mob_timer_timeout() -> void:
 	# Create a new instance of the Mob scene.
@@ -55,11 +53,9 @@ func _on_mob_timer_timeout() -> void:
 	# Spawn the mob by adding it to the Main scene.
 	add_child(mob)
 
-
 func _on_score_timer_timeout() -> void:
 	score += 1
 	$HUD.update_score(score)
-
 
 func _on_start_timer_timeout() -> void:
 	$MobTimer.start()

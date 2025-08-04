@@ -34,7 +34,7 @@ wait_time = 0.5
 [node name="ScoreTimer" type="Timer" parent="."]
 
 [node name="StartTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 0.074
 one_shot = true
 
 [node name="StartPosition" type="Marker2D" parent="."]
